@@ -1,34 +1,31 @@
 <html>
+<link rel="stylesheet" type="text/css" href="../Style/format.css">
 <head>
 	<title> RESERVATION </title>
 </head>
 <body>
-
 	<h1> DETAIL DES RESERVATION </h1>
 
-	<form method="post" action="../Controller/control.php">
+	<form action="../Controller/control.php" method="post">
 
-	/*
-	<?php
-	foreach(reservation.getSeats()){
-	pb: il doit envoyer les infos avant de les ecraser par des nouvelles
-	}
-	?>
-	*/
+		<div class="cadre" class="padding">
 
+	<?php for ($i = 0; $i< $reservation->getSeats(); $i++): ?>
+	  <p> Nom : <input type="text" name="names[]" value=<?php echo $reservation->getNames()[$i];?>> </p>
+		<p> Age : <input type="text" name="ages[]" value=<?php echo $reservation->getAges()[$i];?> > </p>
+	<?php endfor; ?>
 
-	for ($i = 1; $i <= $reservation->seats(); $i++) {
-    	<p> Nom : <input type="text" name="names" /> </p>
-		}
+</div>
 
-		<p> Destination : <input type="text" name="names"/> </p>
-		<p> Nombre de places : <input type="text" name="places"/> </p>
-		<p> Assurance annulation <input type="checkbox" name="insurance" value="off" /> </p>
-		<p> <input type="submit" name="next_page" value="Etape suivante" />
-		<input type="submit" name="cancel" value="Annuler la reservation" /> </p>
-	</p>
+		<p>
+
+			<button type="submit" name="next" value="third"> Etape suivante </button>
+			<button type="submit" name="return" value="retour"> Retour a la page precedente </button>
+			<button type="submit" name="back" value="Annuler la reservation"> Annuler la reservation </button>
+
+		</p>
+			<input type='hidden' name = "p" value="2" />
+	</form>
+</p>
 </body>
 </html>
-
-
-
