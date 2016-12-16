@@ -1,12 +1,12 @@
 <html>
-<link rel="stylesheet" type="text/css" href="../Style/format.css">
+<link rel="stylesheet" type="text/css" href="Style/format.css">
 <head>
 	<title> RESERVATION </title>
 </head>
 <body>
 	<h1> VALIDATION DES RESERVATION </h1>
 
-	<form action="../Controller/control.php" method="POST">
+	<form action="Controller/control.php" method="POST">
 
 	<p class="cadre">
 	<table>

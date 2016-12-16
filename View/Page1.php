@@ -1,5 +1,5 @@
 <html>
-<link rel="stylesheet" type="text/css" href="../Style/format.css">
+<link rel="stylesheet" type="text/css" href="Style/format.css">
 <head>
 	<title> RESERVATION </title>
 </head>
@@ -10,7 +10,7 @@
 	<div class="cadre"> Le prix de la place est de 12 euros jusqu'a 12 ans et ensuite de 15 euros. <br>
 	    Le prix de l'assurance annulation est de 20 euros quel que soit le nombre de voyageurs. </div>
 	<p>
-	<form method="POST" action="../Controller/control.php">
+	<form method="POST" action="Controller/control.php">
 		<input type="hidden" name="page1" />
 		<!-- on ne peut pas mettre id où on veut: si je le met apres value l'id s affiche sur la page -->
 		<p> <label for="destination"> Destination : </label> <input autofocus type="text" name="destination" id = "destination" value=<?php echo $reservation->getDestination();?>  > </p>
