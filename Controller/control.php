@@ -1,5 +1,5 @@
 <?php
-include_once("Model/class_Reservation.php");
+include_once("../Model/class_Reservation.php");
 session_start();
 
 if (!isset($_SESSION["reservation"])){
@@ -22,10 +22,10 @@ if ($p && $_SERVER["REQUEST_METHOD"]=="POST"){
         $reservation->setDestination(input_val($_POST["destination"]));
         $reservation->setSeats(input_val($_POST["seats"]));
         $_SESSION["reservation"] = $reservation;
-        include("view/page2.php");
+        include("../view/page2.php");
       }
       else{
-        include("view/page1.php");
+        include("../view/page1.php");
         if (empty($_POST["destination"])){
           echo 'Veillez entrer une destination';
         }
@@ -51,15 +51,15 @@ if ($p && $_SERVER["REQUEST_METHOD"]=="POST"){
       $error = "false";
       foreach ($_POST["names"] as $name) {
         if($name == ''){
-          include("view/page2.php");
-          echo 'Veillez entrer un nombre pour chauque personne';
+          include("../view/page2.php");
+          echo 'Veillez entrer un nombre pour chaque personne';
           $error="true";
           break;
         }
       }
       foreach ($_POST["ages"] as $age){
         if ($age<0){
-          include("view/page2.php");
+          include("../view/page2.php");
           echo 'Veillez entrer un age superieur a 0';
           $error="true";
           break;
@@ -69,23 +69,23 @@ if ($p && $_SERVER["REQUEST_METHOD"]=="POST"){
         $reservation->addName(input_val($_POST["names"]));
         $reservation->addAge(input_val($_POST["ages"]));
         $_SESSION["reservation"] = $reservation;
-        include("view/page3.php");
+        include("../view/page3.php");
       }
     }
     elseif($_POST['back']=="Annuler la reservation"){
       cancel();
     }
     elseif ($_POST['return']=="retour"){
-      include("view/page1.php");
+      include("../view/page1.php");
     }
     break;
 
     case 3:
     if ($_POST["next_page"]=="Confirmer"){
-      include("view/page4.php");
+      include("../view/page4.php");
     }
     elseif ($_POST["back"]=="Retour a la page precedente") {
-      include("view/page2.php");
+      include("../view/page2.php");
     }
     elseif ($_POST["cancel"]=="Annuler la reservation") {
       cancel();
@@ -94,7 +94,7 @@ if ($p && $_SERVER["REQUEST_METHOD"]=="POST"){
 
     case 4:
     if ($_POST['home']=="Retour a la page d acceuil"){
-      include("view/page1.php");
+      include("../view/page1.php");
     }
     break;
 	}
@@ -102,13 +102,13 @@ if ($p && $_SERVER["REQUEST_METHOD"]=="POST"){
 
 else{
   switch($p){
-    case 1: include("view/page1.php");
+    case 1: include("../view/page1.php");
     break;
-    case 2: include("view/page2.php");
+    case 2: include("../view/page2.php");
     break;
-    case 3: include("view/page3.php");
+    case 3: include("../view/page3.php");
     break;
-    default: include("view/page1.php");
+    default: include("../view/page1.php");
     break;
   }
 }
@@ -117,7 +117,7 @@ else{
 function cancel(){
   $reservation = new Reservation;
   $_SESSION["reservation"] = $reservation;
-  include("view/page1.php");
+  include("../view/page1.php");
 }
 
 function input_val($data){
