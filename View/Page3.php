@@ -1,33 +1,32 @@
 <html>
-<link rel="stylesheet" type="text/css" href="../Style/format.css">
+<link rel="stylesheet" type="text/css" href="Style/format.css">
 <head>
 	<title> RESERVATION </title>
 </head>
 <body>
-	<h1> VALIDATION DES RESERVATION </h1>
-
-	<form action="../Controller/control.php" method="POST">
+	<h1> VALIDATION DES RESERVATIONS </h1>
+	<form action="index.php?page=3" method="POST">
 
 	<p class="cadre">
 	<table>
 		<tr>
 			<td>Destination</td>
-			<td><?php echo $reservation->getDestination(); ?></td>
+			<td><?php echo $_SESSION["reservation"]->getDestination(); ?></td>
 		</tr>
 		<tr>
 			<td>Nombre de places</td>
-			<td><?php echo $reservation->getSeats();?></td>
+			<td><?php echo $_SESSION["reservation"]->getSeats();?></td>
 		</tr>
 			<br>
 		</tr>
-		<?php for ($i = 0 ; $i< $reservation->getSeats(); $i++): ?>
+		<?php for ($i = 0 ; $i< $_SESSION["reservation"]->getSeats(); $i++): ?>
 			<tr>
 				<td>Nom</td>
 				<td><?php echo $_SESSION['reservation']->getNames()[$i];?></td>
 			</tr>
 			<tr>
 				<td>Age</td>
-				<td><?php echo $reservation->getAges()[$i];?> </td>
+				<td><?php echo$_SESSION["reservation"]->getAges()[$i];?> </td>
 			</tr>
 		<?php endfor; ?>
 	</table>

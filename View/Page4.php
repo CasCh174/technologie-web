@@ -1,12 +1,12 @@
 <html>
-<link rel="stylesheet" type="text/css" href="../Style/format.css">
+<link rel="stylesheet" type="text/css" href="Style/format.css">
 <head>
 	<title> RESERVATION </title>
 </head>
 <body>
 	<h1> CONFIRMATION DES RESERVATIONS </h1>
 	<p>
-	   <form action="../Controller/control.php" method="POST">
+	   <form action="index.php?page=4" method="POST">
 	      <p> Votre demande a bien ete enregistree. </p>
 	      <p>Merci de bien vouloir verser la somme de
 					<?php
