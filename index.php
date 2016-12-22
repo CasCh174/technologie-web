@@ -12,20 +12,7 @@ else {
 
 $g = isset($_GET['page']) ? $_GET['page'] : NULL;
 if ($g && $_SERVER["REQUEST_METHOD"]=="POST"){
-  switch($g){
-    case 1:
-    include_once(dirname(__FILE__)."/Controller_p1/p1.php");
-    break;
-    case 2:
-    include_once(dirname(__FILE__)."/Controller_p2/p2.php");
-    break;
-    case 3:
-    include_once(dirname(__FILE__)."/Controller_p3/p3.php");
-    break;
-    case 4:
-    include_once(dirname(__FILE__)."/Controller_p4/p4.php");
-    break;
-  }
+    include_once(dirname(__FILE__)."/Controller_p$g/p$g.php");
 }
 else{
   switch($g){
