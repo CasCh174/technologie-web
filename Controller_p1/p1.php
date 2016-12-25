@@ -26,7 +26,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
       $_SESSION["reservation"] = $reservation;
     }
     else{
-      $reservation->setInsurance("off");
+      $reservation->setInsurance("false");
       $_SESSION["reservation"] = $reservation;
     }
 

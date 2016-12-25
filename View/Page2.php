@@ -9,8 +9,8 @@
 		<form action="index.php?page=2"  method="post">
 			<div class="cadre" class="padding">
 				<?php for ($i = 0; $i< $reservation->getSeats(); $i++): ?>
-		  		<p> Nom : <input type="text" name="names[]" value=<?php echo $reservation->getNames()[$i];?>> </p>
-					<p> Age : <input type="text" name="ages[]" value=<?php echo $reservation->getAges()[$i];?> > </p>
+		  		<p> Nom : <input type="text" name="names[]" value=<?php echo $_SESSION["reservation"]->getNames()[$i];?>> </p>
+					<p> Age : <input type="text" name="ages[]" value=<?php echo $_SESSION["reservation"]->getAges()[$i];?> > </p>
 				<?php endfor; ?>
 			</div>
 			<p>
