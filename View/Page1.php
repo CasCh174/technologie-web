@@ -21,6 +21,7 @@
 			<p>
 			<button class="btn btn-primary btn-block" type="submit" name="next" value="second"> Etape suivante </button>
 			<button class="btn btn-primary btn-block" type="submit" name="back" value="Annuler la reservation"> Annuler la reservation </button>
+			<button class="btn btn-secondary btn-block" type="submit" name="database" value="db"> Base de donnees </button>
 			</p>
 			<input type='hidden' name = "p" value="1" />
 		</form>

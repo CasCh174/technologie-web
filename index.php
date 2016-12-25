@@ -16,6 +16,8 @@ if ($g && $_SERVER["REQUEST_METHOD"]=="POST"){
 }
 else{
   switch($g){
+    case 0: include(dirname(__FILE__)."/view/Page0.php");
+    break;
     case 1: include(dirname(__FILE__)."/view/Page1.php");
     break;
     case 2: include(dirname(__FILE__)."/view/Page2.php");

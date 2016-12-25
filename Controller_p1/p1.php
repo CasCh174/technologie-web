@@ -34,6 +34,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
   elseif ($_POST['back']=="Annuler la reservation") {
     cancel();
   }
+  elseif ($_POST['database']=="db") {
+    include(dirname(__DIR__)."../View/Page0.php");
+  }
 }
 else{
   include(dirname(__DIR__)."../View/Page1.php");
