@@ -2,6 +2,7 @@
 //inclure des inputs pour modifier une ligne
 // -->
 <html>
+<?php include_once(dirname(__DIR__)."../Functions/functions.php"); ?>
 <!-- <link rel="stylesheet" type="text/css" href="Style/format.css"> -->
 <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <head>
@@ -16,7 +17,7 @@
 	<p>
 		<form method="post" action="index.php?page=0">
 			<input type="hidden" name="page0" />
-
+				<button type="submit" name="retour" value="acceuil" > Retour acceuil </button>
 				<table>
 					<tr>
 						<td>id</td>
@@ -37,15 +38,16 @@
 						<td><?php echo $rows[$i]['t_age']?></td>
 						<td><?php echo $rows[$i]['t_destination']?></td>
 						<td><?php echo $rows[$i]['t_insurance']?></td>
-						<td><input type="submit" name="modif<?php $i?>" value="Modifier" /></td>
+						<td><button type="submit" name="modif" value="<?php echo $i ?>" > Modifier </button></td>
 					</tr>
 					<br>
 				<?php endfor; ?>
 				</table>
 
 
+
         <!--
-        <button type="submit" name="next" value="third"> Etape suivante </button>
+        <input type="submit" name="modif" value= />
         <button class="btn btn-primary btn-block" type="submit" name="next" value="second"> Etape suivante </button>
         <button type="submit" name="mod" value="third"> Modifier </button>
         <input type="submit" name="next_page" value="Confirmer" /> -->

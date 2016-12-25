@@ -11,7 +11,8 @@ else {
 }
 
 $g = isset($_GET['page']) ? $_GET['page'] : NULL;
-if ($g && $_SERVER["REQUEST_METHOD"]=="POST"){
+
+if ($g && $_SERVER["REQUEST_METHOD"]=="POST" ||$g==0 && $_SERVER["REQUEST_METHOD"]=="POST"){
     include_once(dirname(__FILE__)."/Controller_p$g/p$g.php");
 }
 else{
