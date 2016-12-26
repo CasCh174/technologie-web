@@ -40,4 +40,20 @@ function get_data(){
   }
   return $rows;
 }
+
+function get_specifcData($id){
+  $mysqli = new mysqli("localhost", "root", "","booking") or die("Could not select database");
+  //get data from database
+  $rows = array();
+  $query= "SELECT * FROM t_reservation WHERE t_id=$id";
+  $result= $mysqli->query($query) or die("Queryfailed");
+  if ($result->num_rows== 0)
+  {$resNum = 0;}
+  else{
+    while ($row = $result -> fetch_assoc()) {
+              $rows[] = $row;
+            }
+  }
+  return $rows;
+}
 ?>

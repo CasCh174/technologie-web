@@ -18,6 +18,31 @@
 		<form method="post" action="index.php?page=0">
 			<input type="hidden" name="page0" />
 				<button type="submit" name="retour" value="acceuil" > Retour acceuil </button>
+				<?php if(isset($info)): ?>
+					<p>Anciennes donnees:</p>
+					<table>
+						<tr>
+							<td>id</td>
+							<td>reservation number</td>
+							<td>name</td>
+							<td>age</td>
+							<td>destination</td>
+							<td>insurance</td>
+						</tr>
+						<tr>
+							<?php foreach($_SESSION["info"][0] as $val):?>
+								<td><?php echo $val ?></td>
+							<?php endforeach; ?>
+						</tr>
+						<tr>
+							<?php foreach($info[0] as $val):?>
+								<td><input class = "form-control" type="text" name="<?php echo $val;?>" value=<?php echo $val;?>  > </td>
+							<?php endforeach; ?>
+						</tr>
+					</table>
+					<button type="submit" name="maj" value="maj" > Mettre à jour </button>
+				<?php endif; ?>
+
 				<table>
 					<tr>
 						<td>id</td>
@@ -51,9 +76,10 @@
         <button class="btn btn-primary btn-block" type="submit" name="next" value="second"> Etape suivante </button>
         <button type="submit" name="mod" value="third"> Modifier </button>
         <input type="submit" name="next_page" value="Confirmer" /> -->
-			</p>
+
 			<input type='hidden' name = "p" value="0" />
 		</form>
+	</p>
 </div>
 </body>
 </html>
